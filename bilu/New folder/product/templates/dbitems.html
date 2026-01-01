@@ -1,0 +1,21 @@
+{% extends 'Land.html' %}
+{% block content %}
+
+<h1 align="center" style="color: rgba(255, 0, 0, 0.688);">Products</h1>
+<hr><br>
+{% for i in db %}
+    <table border="3" align="center" width="250">
+        <tr align="center">
+            <td>ID</td>
+            <td>{{ i.id }}</td>
+        </tr>
+        <tr align="center">
+            <td>Name</td>
+            <td>{{ i.name }}</td>
+        </tr>
+        <tr align="center">
+            <td colspan="10" align="center"><a href="/product/productdetail/{{ i.id }}">Details</a></td>
+    </table>
+    <hr>
+{% endfor %}
+{% endblock %}

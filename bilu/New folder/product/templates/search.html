@@ -1,0 +1,43 @@
+{% extends 'Land.html' %}
+{% block content %}
+{% load static %}
+
+<!-- <h1 style="color:rgb(235, 209, 63);">Product Search</h1>
+    <form action="/product/search/" method="get">
+       <input type="text" name="query" placeholder="Enter product name">
+       <button type="submit" style="color: brown;">Search</button>
+    </form>
+
+    {% if results %}
+        <h2 style="color: rgb(77, 8, 205);">Search Results for "{{ query }}":</h2>
+        {% for product in results %}
+            <div style="border: 1px solid #ccc; padding: 10px; margin: 10px 0;">
+                <h3>Name: {{ product.name }}</h3>
+                <h4>Price: {{ product.price }}</h4>
+                <h4>Features: {{ product.fea }}</h4>
+                <h4>Description: {{ product.desc }}</h4>
+                <a href="/product/details/{{ product.id }}/">View Details</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h2 style="color: rgba(206, 7, 10, 0.823);">No results found for "{{ query }}". Please try again.</h2>
+    {% endif %} -->
+
+
+
+<h2 style="color: rgb(77, 8, 205);">Product Page</h2>
+<script src="{% static 'js/pro.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<form>
+    <input type="text" name="keyword" id="keyword">
+    <input type="button" style="color: brown;" value="Search" onclick="getprodata()">
+    <input type="button" style="color: rgb(50, 8, 237);" value="Draw" onclick="drawalldata()">
+
+</form>
+<div id="data"></div>
+
+<div>
+    <canvas id="myChart"></canvas>
+</div>
+
+{% endblock %}

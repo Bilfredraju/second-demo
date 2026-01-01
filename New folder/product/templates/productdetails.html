@@ -1,0 +1,13 @@
+{% extends 'Land.html' %}
+{% block content %}
+<h1 style="color: green">Product Details</h1>
+{{ pro }} ID:{{ pro.id }} name:{{ pro.name }} description:{{ pro.desc }}<br />
+features:{{ pro.fea }} <br />
+price:{{ pro.price }} <br />
+<form action="/product/addtocart/">
+  <input type="hidden" name="proid" value="{{pro.id}}" />
+  qty:-
+  <input type="number" name="qty" id="" min="0" max="5" />
+  <input type="submit" value="add to cart" />
+</form>
+{%endblock%}

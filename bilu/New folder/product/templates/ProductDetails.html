@@ -1,0 +1,41 @@
+{% extends 'Land.html' %}
+{% block content %}
+
+    <h1 align="center" style="color: rgba(26, 255, 0, 0.726);">Product Details</h1>
+    <hr><br>
+    {% for i in db %}
+    <form action="/product/addcart/" method="get">
+        {% csrf_token %}
+    <table border="3" align="center" width="300">
+        <tr align="center">
+            <td>ID</td>
+            <td>{{ i.id }}</td>
+        </tr>
+        <tr align="center">
+            <td>Name</td>
+            <td>{{ i.name }}</td>
+        </tr>
+        <tr align="center">
+            <td>Price</td>
+            <td>{{ i.price }}</td>
+        </tr>
+        <tr align="center">
+            <td>Description</td>
+            <td>{{ i.desc }}</td>
+        </tr>
+        <tr align="center">
+            <td>Features</td>
+            <td>{{ i.fea }}</td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input type="hidden" name="proid" value="{{ i.id }}">
+                <input type="number" name="quantity" min="0" max="5">
+            <input type="submit" value="Add to Cart"></td>
+        </tr>
+    </table>
+    </form>
+    <hr>
+
+    {% endfor %}
+{% endblock %}

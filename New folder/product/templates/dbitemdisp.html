@@ -1,0 +1,11 @@
+{%extends 'Land.html'%} {%block content%}
+
+<h1 style="color: green">Products Home</h1>
+{% comment %} {{prods}} {% endcomment %} {% for i in prods%} ID:{{i.id}}-
+<a href="/product/details/{{i.id}}/">Name:{{i.name}}</a> {% comment %}
+Price:{{i.price}} <br />
+Description:{{i.Desc}} <br />
+Features:{{i.fea}} <br />
+{% endcomment %}
+<br />
+{%endfor%} {% endblock %}

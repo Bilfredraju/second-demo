@@ -1,0 +1,18 @@
+{%extends 'Land.html'%}
+{% block content%}
+<h1 style="color: rgba(0, 255, 60, 0.726)">My Cart</h1>
+<form action="/product/clearcart/">
+    <button type="submit" style="color: brown;">clear cart</button>
+</form>
+
+{% for i in pros %}
+<h4>name:{{i.Name}}</h4>
+<h4>quantity:{{i.qty}}</h4>
+<h4>price:{{i.Price}}</h4>
+<h4>features:{{i.Fea}}</h4>
+<h4>description:{{i.Des}}</h4>
+<h3>total product amount:{{i.pro_t}}</h3>
+<br>
+{% endfor %}
+<h2>total cart amount: {{ cart_sum }}</h2>
+{% endblock %}

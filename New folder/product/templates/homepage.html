@@ -1,0 +1,25 @@
+{% extends 'Land.html' %} {% block content %}
+<h1>Welcome to the Home Page</h1>
+<h2>{{ cat9 }}</h2>
+
+{% for item in pro %}
+<table border="1" style="margin: 10px; border-collapse: collapse">
+  {% for k, v in item.items %}
+  <tr>
+    <td><strong>{{ k }}</strong></td>
+
+    {% if k == 'spec' %}
+    <td>
+      <ul style="margin: 0; padding-left: 20px">
+        {% for value in v %}
+        <li>{{ value }}</li>
+        {% endfor %}
+      </ul>
+    </td>
+    {% else %}
+    <td>{{ v }}</td>
+    {% endif %}
+  </tr>
+  {% endfor %}
+</table>
+{% endfor %} {% endblock %}

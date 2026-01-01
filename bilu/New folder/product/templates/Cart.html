@@ -1,0 +1,39 @@
+{% extends 'Land.html' %}
+{% block content %}
+
+<h1 align="center" style="color: rgba(0, 255, 60, 0.726);">My Cart</h1>
+<hr><br>
+
+<form action="/product/clearcart">
+    <button type="submit" style="background-color: red; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; margin-left: 97%;">Clear Cart 🗑️</button>
+</form>
+{% if pros %}
+<table border="3" align="center" width="700">
+    <tr align="center">
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Feature</th>
+        <th>Total Price</th>
+    </tr>
+    {% for item in pros %}
+    <tr align="center">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.quantity }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.description }}</td>
+        <td>{{ item.feature }}</td>
+        <td>{{ item.pro_t }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<h>grand total:{{grand_total}}</h>
+{% else %}
+<h3 align="center">Your cart is empty 💤</h3>
+{% endif %}
+
+{% endblock %}

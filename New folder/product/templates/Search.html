@@ -1,0 +1,22 @@
+{% extends 'Land.html' %}
+{% block content %}
+{% load static %}
+<h1align="center" style="color: blue"><b>SEARCH</b></h1>
+  <hr />
+  <br />
+<script src="{% static 'js/pro.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+
+  <form>
+    <input type="text" name="keyword" id="keyword" />
+    <input type="button" value="Search" onclick="getprodata()" />
+    <input type="button" value="Draw" onclick="drawdata()" />
+  </form>
+  <div id="data"></div>
+  <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  {% endblock %}
